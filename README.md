@@ -1,6 +1,18 @@
 # profile
 
 A new Flutter project.
+# HNGx-Satge1Task
+This is a flutter project. It is an app that shows my HNGx internship slack profile.
+It has a main page which shows:
+* A Profile picture,
+* Slack username,
+* Internship role,
+* Mobile number, and
+* A navigation button to an in-app GitHub page webview
+
+The app allows editing of slack username and intern role description  
+
+You can also tap on the profile image to have a zoomed view or a bigger image
 
 ## Getting Started
 
