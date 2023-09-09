@@ -10,10 +10,10 @@ It has a main page which shows:
 * Mobile number, and
 * A navigation button to an in-app GitHub page webview
 
-The app allows editing of slack username and intern role description.
-However, the profile image cannot be changed. 
+The app allows editing of slack username and intern role description  
+but the profile image cannot be changed. 
 
-You can also tap on the profile image to have a zoomed view or a bigger image
+You can however tap on the profile image to have a zoomed view or a bigger image
 
 ## Getting Started
 
