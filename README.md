@@ -3,7 +3,7 @@
 A new Flutter project.
 # HNGx-Satge1Task
 Hi, my name is Ojo Mutiu. My slack name is MiQSource.  
-This is a flutter project. It is an app that shows my HNGx internship slack profile.  
+This is a flutter project. It is an app that shows my HNGx internship slack profile.   
 
 ## Features
 It has a main page which shows:
@@ -16,11 +16,12 @@ It has a main page which shows:
 The app allows editing of slack username and intern role description  
 but the profile image cannot be changed. 
 
-You can however tap on the profile image to view image  
+You can, however, tap on the profile image to view the image.  
 
 
 ## Packages used:  
-The only package used for this project is Flutter inappwebview. For documentation, visit:  
+As at the writing of this app, the only package used for this project is  
+Flutter_inappwebview 5.7.2+3. For documentation, visit:  
 https://pub.dev/packages/flutter_inappwebview
 
 
