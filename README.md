@@ -5,7 +5,7 @@ A new Flutter project.
 Hi, my name is Ojo Mutiu. My slack name is MiQSource.  
 This is a flutter project. It is an app that shows my HNGx internship slack profile.  
 
-##Features
+## Features
 It has a main page which shows:
 * A Profile picture,
 * Slack username,
