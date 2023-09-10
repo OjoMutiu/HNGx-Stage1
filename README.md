@@ -33,7 +33,7 @@ To install the app, you can clone this repository.
 
 ## Appetize.io link for testing
 The link to the Appetize.io apk testing of the app is:  
-https://appetize.io/app/tszkb3qhnamwvxrox4cs5ltaty?device=pixel4&osVersion=12.0&scale=75
+https://appetize.io/app/3ypj5j4euvhxkvl6nkiuhucehm?device=pixel4&osVersion=12.0&scale=75
 
 
 ## Assumption
