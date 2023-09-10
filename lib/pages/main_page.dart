@@ -16,7 +16,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   //Variable
   String username = 'MiQSource';
-  String roleDetails = AppStrings.roleDescription;
+  String role = AppStrings.roleTitle;
   late TextEditingController nameController, roleController;
 
   @override
@@ -115,27 +115,36 @@ class _MainPageState extends State<MainPage> {
                   content: username,
                   prefix: Icons.person,
                   description: AppStrings.namePrivacyAssurance,
-                  onPressed: () {
-                    editSlackName(
-                      hintText: username,
-                      title: AppStrings.name,
-                      controller: nameController,
-                    );
+                  onPressed: () async {
+                    final name = await buildEditDialog(context,
+                        title: AppStrings.name,
+                        controller: nameController,
+                        hintText: username);
+
+                    if (name.length > 1 && name.isNotEmpty) {
+                      setState(() {
+                        username = name;
+                      });
+                    }
                   },
                 ),
                 SizedBox(height: AppDimensions.height10),
                 //Role
                 Details(
                   title: AppStrings.role,
-                  content: AppStrings.roleTitle,
+                  content: role, //AppStrings.roleTitle,
                   prefix: Icons.info_outline,
-                  description: AppStrings.roleDescription,
-                  onPressed: () {
-                    editSlackName(
-                      hintText: roleDetails,
-                      title: AppStrings.role,
-                      controller: roleController,
-                    );
+                  description: AppStrings.roleDescription, //roleDetails,
+                  onPressed: () async {
+                    final String desc = await buildEditDialog(context,
+                        title: AppStrings.role,
+                        controller: roleController,
+                        hintText: role);
+                    if (desc.length > 1 && desc.isNotEmpty) {
+                      setState(() {
+                        role = desc;
+                      });
+                    }
                   },
                 ),
                 SizedBox(height: AppDimensions.height10),
@@ -178,12 +187,11 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  //Field Editing Dialog
-  Future editSlackName(
-      {required String hintText,
-      required String title,
-      required TextEditingController controller}) {
-    return showDialog(
+  Future<dynamic> buildEditDialog(BuildContext context,
+      {required String title,
+      required TextEditingController controller,
+      required String hintText}) {
+    return showDialog<String>(
         context: context,
         builder: (context) {
           return AlertDialog(
@@ -200,27 +208,24 @@ class _MainPageState extends State<MainPage> {
                   hintText: hintText,
                 ),
                 onChanged: (value) {
-                  hintText = value;
+                  setState(() {
+                    hintText = value;
+                  });
                 },
               ),
             ),
             actions: [
               TextButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).pop(controller.text);
                   },
                   child: Text(AppStrings.cancel)),
               TextButton(
                   onPressed: () {
-                    if (controller.text.length > 1 &&
-                        controller.text.isNotEmpty) {
-                      Navigator.pop(context);
-                      setState(() {
-                        username = controller.text;
-                      });
+                    //get the text in the textField via the pop() method
+                    Navigator.of(context).pop(controller.text);
 
-                      controller.clear();
-                    }
+                    controller.clear();
                   },
                   child: Text(
                     AppStrings.save,
